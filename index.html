@@ -1,10 +1,25 @@
+---
+banner: isle-of-skye.jpg
+projects: 
+    -
+        name: 'Project One'
+        image: 'https://picsum.photos/200'
+        github: 'https://github.com/maureenlholland'
+        live: '#'
+    -
+        name: 'Project Two'
+        image: 'https://picsum.photos/200'
+        github: 'https://github.com/maureenlholland'
+        live: '#' 
+---
+
 <!doctype html>
 <html>
 <head>
     <title>Page title</title>
 </head>
 <body>
-    <div>
+    <div style="background-image: url(img/{{banner}});">
         <header>
             <h1>Maureen L. Holland</h1>
             <p>Writer / Web Developer</p>
@@ -19,12 +34,15 @@
         <section>
             <h2>Projects</h2>
             <ul>
+                {% for project in projects %}
                 <li>
-                    <img src="https://picsum.photos/200" alt="Placeholder">
+                    <img src="{{ project.image }}" alt="Placeholder">
+                    <h3>{{ project.name }}</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas tempore maiores aut alias, incidunt repellendus quo at, fuga harum blanditiis consectetur magnam quibusdam repellat sapiente qui iusto corporis asperiores delectus. Nam ratione, eius temporibus ad atque rem? Deserunt commodi facilis, pariatur maiores minus, adipisci officiis quo, earum porro reprehenderit perspiciatis.</p>
-                    <a href="#">View Github</a>
-                    <a href="#">View Live</a>
+                    <a href="{{ project.github }}">View Github</a>
+                    <a href="{{ project.live }}">View Live</a>
                 </li>
+                {% endfor %}
             </ul>
         </section>
     </main>
