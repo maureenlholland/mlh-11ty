@@ -1,6 +1,5 @@
 const puppeteer = require('puppeteer');
 const axeCore = require('axe-core');
-const assert = require('assert');
 
 let results;
 const getHelp = (response, type) => {
