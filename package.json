@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --config",
-    "lint": "eslint --ignore-path .gitignore ."
+    "lint": "eslint --ignore-path .gitignore .",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|json|html)\""
   },
   "keywords": [],
   "author": "",
@@ -17,9 +18,13 @@
     "axe-core": "^3.5.2",
     "babel-jest": "^25.1.0",
     "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
     "jest": "^25.1.0",
     "jest-dev-server": "^4.4.0",
     "jest-puppeteer": "^4.4.0",
     "puppeteer": "^2.1.1"
+  },
+  "dependencies": {
+    "prettier": "^1.19.1"
   }
 }

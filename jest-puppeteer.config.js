@@ -1,6 +1,6 @@
 module.exports = {
   server: {
-    command: 'npx @11ty/eleventy --serve',
+    command: "npx @11ty/eleventy --serve",
     port: 8080,
     debug: true,
     launchTimeout: 30000
@@ -8,6 +8,6 @@ module.exports = {
   launch: {
     headless: false,
     devtools: true,
-    timeout:30000
+    timeout: 30000
   }
-}
+};

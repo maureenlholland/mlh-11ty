@@ -1,51 +1,69 @@
 ---
 banner: isle-of-skye.jpg
-projects: 
-    -
-        name: 'Project One'
-        image: 'https://picsum.photos/200'
-        github: 'https://github.com/maureenlholland'
-        live: '#'
-    -
-        name: 'Project Two'
-        image: 'https://picsum.photos/200'
-        github: 'https://github.com/maureenlholland'
-        live: '#' 
+projects:
+  - name: "Project One"
+    image: "https://picsum.photos/200"
+    github: "https://github.com/maureenlholland"
+    live: "#"
+  - name: "Project Two"
+    image: "https://picsum.photos/200"
+    github: "https://github.com/maureenlholland"
+    live: "#"
 ---
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>Page title</title>
-</head>
-<body>
+  </head>
+  <body>
     <div style="background-image: url(img/{{banner}});">
-        <header>
-            <h1>Maureen L. Holland</h1>
-            <p>Writer / Web Developer</p>
-        </header>
-        <footer>Design by <a href="https://html5up.net/">HTML5 UP</a></footer>
+      <header>
+        <h1>Maureen L. Holland</h1>
+        <p>Writer / Web Developer</p>
+      </header>
+      <footer>Design by <a href="https://html5up.net/">HTML5 UP</a></footer>
     </div>
     <main>
-        <section>
-            <h2>About</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto ea a iste tempore sunt distinctio nemo tenetur quos, officiis itaque, delectus reprehenderit soluta amet optio, repellat, dicta ullam deserunt reiciendis tempora perferendis ipsam dolorum quidem rerum accusantium! Sequi architecto autem natus consectetur eligendi, nam accusamus odit, neque molestias sint amet sed quos doloribus. Illum explicabo corrupti dicta temporibus ipsam dolor minus repellendus dolorum repudiandae cum earum maxime, obcaecati ducimus quae, rem nobis quod illo esse nihil accusantium, sequi architecto! Nihil, nam ratione quod ducimus eligendi expedita explicabo, sed totam, laboriosam, nisi earum amet vel voluptatem aut quis fugiat accusantium velit.</p>
-        </section>
-        <section>
-            <h2>Projects</h2>
-            <ul>
-                {% for project in projects %}
-                <li>
-                    <img src="{{ project.image }}" alt="Placeholder">
-                    <h3>{{ project.name }}</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas tempore maiores aut alias, incidunt repellendus quo at, fuga harum blanditiis consectetur magnam quibusdam repellat sapiente qui iusto corporis asperiores delectus. Nam ratione, eius temporibus ad atque rem? Deserunt commodi facilis, pariatur maiores minus, adipisci officiis quo, earum porro reprehenderit perspiciatis.</p>
-                    <a href="{{ project.github }}">View Github</a>
-                    <a href="{{ project.live }}">View Live</a>
-                </li>
-                {% endfor %}
-            </ul>
-        </section>
+      <section>
+        <h2>About</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto
+          ea a iste tempore sunt distinctio nemo tenetur quos, officiis itaque,
+          delectus reprehenderit soluta amet optio, repellat, dicta ullam
+          deserunt reiciendis tempora perferendis ipsam dolorum quidem rerum
+          accusantium! Sequi architecto autem natus consectetur eligendi, nam
+          accusamus odit, neque molestias sint amet sed quos doloribus. Illum
+          explicabo corrupti dicta temporibus ipsam dolor minus repellendus
+          dolorum repudiandae cum earum maxime, obcaecati ducimus quae, rem
+          nobis quod illo esse nihil accusantium, sequi architecto! Nihil, nam
+          ratione quod ducimus eligendi expedita explicabo, sed totam,
+          laboriosam, nisi earum amet vel voluptatem aut quis fugiat accusantium
+          velit.
+        </p>
+      </section>
+      <section>
+        <h2>Projects</h2>
+        <ul>
+          {% for project in projects %}
+          <li>
+            <img src="{{ project.image }}" alt="Placeholder" />
+            <h3>{{ project.name }}</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas
+              tempore maiores aut alias, incidunt repellendus quo at, fuga harum
+              blanditiis consectetur magnam quibusdam repellat sapiente qui
+              iusto corporis asperiores delectus. Nam ratione, eius temporibus
+              ad atque rem? Deserunt commodi facilis, pariatur maiores minus,
+              adipisci officiis quo, earum porro reprehenderit perspiciatis.
+            </p>
+            <a href="{{ project.github }}">View Github</a>
+            <a href="{{ project.live }}">View Live</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </section>
     </main>
     <script src="node_modules/axe-core/axe.min.js"></script>
-</body>
+  </body>
 </html>
