@@ -1,0 +1,45 @@
+---
+permalink: styles.css
+banner: 'img/isle-of-skye.jpg'
+---
+
+body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+header {
+  grid-area: header;
+  background-image: url({{ banner }});
+}
+
+footer {
+  grid-area: footer;
+}
+
+main {
+  grid-area: main;
+}
+
+@media screen and (min-width: 980px) {
+  body {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "header main"
+      "footer main";
+  }
+  header {
+    grid-row: 1 / -1;
+  }
+  footer {
+    grid-row: 2 / -1;
+    position: relative;
+    z-index: 1;
+  }
+}
