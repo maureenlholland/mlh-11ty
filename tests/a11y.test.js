@@ -3,10 +3,12 @@ const axeCore = require("axe-core");
 
 let results;
 const getHelp = (response, type) => {
-  return response.violations.filter(v => v.impact === type).map(v => v.help);
+  return response.violations
+    .filter((v) => v.impact === type)
+    .map((v) => v.help);
 };
 
-describe("MLH Landing", () => {
+describe("MLH", () => {
   beforeAll(async () => {
     await page.goto("http://localhost:8080/");
     try {
