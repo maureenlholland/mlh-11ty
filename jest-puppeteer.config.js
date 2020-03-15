@@ -6,7 +6,7 @@ module.exports = {
     launchTimeout: 30000
   },
   launch: {
-    headless: false,
+    headless: true,
     devtools: true,
     timeout: 30000
   }
