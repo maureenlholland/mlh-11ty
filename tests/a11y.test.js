@@ -3,9 +3,7 @@ const axeCore = require("axe-core");
 
 let results;
 const getHelp = (response, type) => {
-  return response.violations
-    .filter((v) => v.impact === type)
-    .map((v) => v.help);
+  return response.violations.filter(v => v.impact === type).map(v => v.help);
 };
 
 describe("MLH", () => {
