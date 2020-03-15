@@ -6,7 +6,10 @@
   "scripts": {
     "test": "jest --config",
     "lint": "eslint --ignore-path .gitignore .",
-    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|json|html)\""
+    "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|json|html)\"",
+    "format": "npm run prettier -- --write",
+    "check-format": "npm run prettier -- --list-different",
+    "validate": "npm run check-format && npm run lint && npm run test"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +22,7 @@
     "babel-jest": "^25.1.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
+    "husky": "^4.2.3",
     "jest": "^25.1.0",
     "jest-dev-server": "^4.4.0",
     "jest-puppeteer": "^4.4.0",
