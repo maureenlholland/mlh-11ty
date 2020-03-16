@@ -29,11 +29,14 @@ projects:
       <p>writer / web developer / wanderer</p>
     </header>
     <footer>
-      Design modified from
-      <a href="https://html5up.net/strata">HTML5 UP's Strata template</a>
+      <p>
+        Design modified from
+        <a href="https://html5up.net/strata">HTML5 UP's Strata template</a>
+      </p>
+      <p>Copyright {{ "now" | date: "%Y" }}</p>
     </footer>
     <main>
-      <section>
+      <section class="about">
         <h2>About</h2>
         <p>
           I write for humans, computers and money (not necessarily in that
@@ -41,12 +44,12 @@ projects:
           <strong>Inside the NBA</strong>. If offline and not sleeping, may be
           found
           <strong>re-reading Harry Potter or re-watching Grizzly Man</strong>,
-          depending on mood.
-          <strong>If outdoors and biking, probably lost</strong>. Extremely
-          introverted and easily startled. Please approach with caution.
+          depending on mood. If outdoors and biking,
+          <strong>probably lost</strong>. Extremely introverted and easily
+          startled. Please approach with caution.
         </p>
       </section>
-      <section>
+      <section class="projects">
         <h2>Side Projects</h2>
         <ul class="list">
           {% for project in projects %}
@@ -58,14 +61,31 @@ projects:
                 alt="{{ project.name screenshot }}"
               />
             </div>
-            <p class="item__description">{{ project.description }}</p>
             <div class="item__ctas">
               <a href="{{ project.github }}">View Github</a>
               <a href="{{ project.live }}">View Live</a>
             </div>
+            <p class="item__description">{{ project.description }}</p>
           </li>
           {% endfor %}
         </ul>
+      </section>
+      <section class="in-progress">
+        <h2>Does this site look weird?</h2>
+        <p>
+          It should. I took some liberties with the design and it's a work in
+          progress. I wanted to play around with
+          <a href="https://www.11ty.dev/">a Static Site Generator</a>,
+          <a href="https://css-tricks.com/snippets/css/complete-guide-grid/"
+            >CSS Grid</a
+          >, and
+          <a href="https://github.com/dequelabs/axe-core"
+            >automated accessibility testing</a
+          >. You can find
+          <a href="https://github.com/maureenlholland/mlh-11ty"
+            >the code for this project on GitHub</a
+          >.
+        </p>
       </section>
     </main>
   </body>

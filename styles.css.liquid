@@ -43,7 +43,8 @@ h3 {
 
 h2,
 h3,
-p {
+p,
+.item__ctas {
   margin-top: 0;
   margin-bottom: 25px;
 }
@@ -59,6 +60,7 @@ a:hover,
 a:focus {
   color: {{ accent-color }};
   border-bottom: 2px dotted {{ accent-color }};
+  outline: none;
 }
 
 header,
@@ -73,7 +75,7 @@ footer {
 header {
   font-size: 1.35rem;
   grid-area: header;
-  background-position: center;
+  background-position: center 25%;
 }
 
 footer {
@@ -86,13 +88,13 @@ footer a {
   border-bottom: 2px solid white;
 }
 
+footer p:not(:last-of-type) {
+  margin-bottom: 10px;
+}
+
 main {
   grid-area: main;
   padding: 20px;
-}
-
-section a {
-  margin-right: 10px;
 }
 
 section:not(:last-of-type):after {
@@ -104,14 +106,14 @@ section:not(:last-of-type):after {
   margin: 50px 0;
 }
 
+.projects a {
+  margin-right: 10px;
+}
+
 .list {
   margin: 0;
   padding: 0;
   list-style: none;
-}
-
-.list__item {
-  margin-bottom: 25px;
 }
 
 .item__container {
@@ -142,6 +144,7 @@ section:not(:last-of-type):after {
   }
   header {
     grid-row: 1 / -1;
+    background-position: center 10%;
   }
   footer {
     grid-row: 2 / -1;
