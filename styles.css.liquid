@@ -35,8 +35,17 @@ body {
 h2,
 h3 {
   color: #666;
+}
+
+h3 {
   font-weight: normal;
+}
+
+h2,
+h3,
+p {
   margin-top: 0;
+  margin-bottom: 25px;
 }
 
 a {
@@ -82,6 +91,46 @@ main {
   padding: 20px;
 }
 
+section a {
+  margin-right: 10px;
+}
+
+section:not(:last-of-type):after {
+  content: "";
+  height: 1px;
+  width: 100%;
+  display: block;
+  background-color: lightgrey;
+  margin: 50px 0;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list__item {
+  margin-bottom: 25px;
+}
+
+.item__container {
+  min-height: 300px;
+  margin-bottom: 25px;
+  background: lightgrey;
+  border-radius: 5px;
+  display: flex;
+}
+
+.item__container img {
+  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+}
+
 @media screen and (min-width: 980px) {
   body {
     height: 100vh;
@@ -104,5 +153,16 @@ main {
   main {
     overflow-y: scroll;
     padding: 50px;
+  }
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .list__item {
+    width: calc(50% - 10px);
+  }
+  .item__container {
+    height: 300px;
   }
 }

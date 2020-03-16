@@ -1,13 +1,15 @@
 ---
 projects:
-  - name: "Project One"
-    image: "https://picsum.photos/200"
-    github: "https://github.com/maureenlholland"
-    live: "#"
-  - name: "Project Two"
-    image: "https://picsum.photos/200"
-    github: "https://github.com/maureenlholland"
-    live: "#"
+  - name: "React To-Do List"
+    image: "img/react-to-do.jpg"
+    github: "https://github.com/maureenlholland/to-do-app"
+    live: "https://to-do-app-2018.herokuapp.com/"
+    description: "Super simple but weirdly addictive to-do list. Add and delete as many items as you like! Built with React and hosted on Heroku."
+  - name: "Vue To-Do List"
+    image: "img/vue-to-do.jpg"
+    github: "https://github.com/maureenlholland/vue-to-do"
+    live: "https://maureenlholland.github.io/vue-to-do/"
+    description: "Finally a to-do list with the joys of editing! Built with Vue and hosted on gh-pages."
 ---
 
 <!DOCTYPE html>
@@ -35,30 +37,32 @@ projects:
         <h2>About</h2>
         <p>
           I write for humans, computers and money (not necessarily in that
-          order). If online and not coding, most likely watching clips of Inside
-          the NBA. If offline and not sleeping, may be found re-reading Harry
-          Potter or re-watching Grizzly Man, depending on mood. If outdoors and
-          biking, probably lost. Extremely introverted and easily startled.
-          Please approach with caution.
+          order). If online and not coding, most likely watching clips of
+          <strong>Inside the NBA</strong>. If offline and not sleeping, may be
+          found
+          <strong>re-reading Harry Potter or re-watching Grizzly Man</strong>,
+          depending on mood.
+          <strong>If outdoors and biking, probably lost</strong>. Extremely
+          introverted and easily startled. Please approach with caution.
         </p>
       </section>
       <section>
-        <h2>Projects</h2>
-        <ul>
+        <h2>Side Projects</h2>
+        <ul class="list">
           {% for project in projects %}
-          <li>
-            <img src="{{ project.image }}" alt="Placeholder" />
-            <h3>{{ project.name }}</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas
-              tempore maiores aut alias, incidunt repellendus quo at, fuga harum
-              blanditiis consectetur magnam quibusdam repellat sapiente qui
-              iusto corporis asperiores delectus. Nam ratione, eius temporibus
-              ad atque rem? Deserunt commodi facilis, pariatur maiores minus,
-              adipisci officiis quo, earum porro reprehenderit perspiciatis.
-            </p>
-            <a href="{{ project.github }}">View Github</a>
-            <a href="{{ project.live }}">View Live</a>
+          <li class="list__item">
+            <h3 class="item__name">{{ project.name }}</h3>
+            <div class="item__container">
+              <img
+                src="{{ project.image }}"
+                alt="{{ project.name screenshot }}"
+              />
+            </div>
+            <p class="item__description">{{ project.description }}</p>
+            <div class="item__ctas">
+              <a href="{{ project.github }}">View Github</a>
+              <a href="{{ project.live }}">View Live</a>
+            </div>
           </li>
           {% endfor %}
         </ul>
