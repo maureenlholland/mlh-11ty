@@ -1,6 +1,10 @@
 ---
 permalink: styles.css
 banner: 'img/isle-of-skye-cropped.jpg'
+main-font: 'Source Sans Pro'
+main-font-color: '#787878'
+accent-color: limegreen
+overlay: linear-gradient(to bottom, rgba(54, 102, 149, 0.3), rgba(54, 102, 149, 0.3))
 ---
 
 
@@ -14,6 +18,10 @@ html {
 }
 
 body {
+  font-family: {{ main-font }}, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: {{ main-font-color }};
   margin: 0;
   display: grid;
   grid-template-columns: 1fr;
@@ -24,15 +32,37 @@ body {
     "footer";
 }
 
+h2,
+h3 {
+  color: #666;
+  font-weight: normal;
+  margin-top: 0;
+}
+
+a {
+  color: {{ main-font-color }};
+  text-decoration: none;
+  border-bottom: 1px solid {{ main-font-color }};
+  transition: 0.3s;
+}
+
+a:hover,
+a:focus {
+  color: {{ accent-color }};
+  border-bottom: 2px dotted {{ accent-color }};
+}
+
 header,
 footer {
+  color: white;
   text-align: center;
   padding: 50px;
-  background-image: url({{ banner }});
+  background-image: {{ overlay }}, url({{ banner }});
   background-size: cover;
 }
 
 header {
+  font-size: 1.35rem;
   grid-area: header;
   background-position: center;
 }
@@ -42,8 +72,14 @@ footer {
   background-position: center 75%;
 }
 
+footer a {
+  color: white;
+  border-bottom: 2px solid white;
+}
+
 main {
   grid-area: main;
+  padding: 20px;
 }
 
 @media screen and (min-width: 980px) {
@@ -63,8 +99,10 @@ main {
     position: relative;
     z-index: 1;
     background-image: none;
+    align-self: end;
   }
   main {
     overflow-y: scroll;
+    padding: 50px;
   }
 }
