@@ -1,4 +1,6 @@
 ---
+title: "Maureen L. Holland"
+tagline: "writer / web developer / wanderer"
 projects:
   - name: "React To-Do List"
     image: "img/react-to-do.jpg"
@@ -15,7 +17,17 @@ projects:
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>MLH</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:type" content="site" />
+    <meta property="og:title" content="{{ title }}" />
+    <meta property="og:description" content="{{ tagline }}" />
+    <meta property="og:url" content="https://maureenlholland.com/" />
+    <meta property="og:site_name" content="{{ title }}" />
+    <meta name="twitter:title" content="{{ title }}" />
+    <meta name="twitter:description" content="{{ tagline }}" />
+    <link rel="icon" type="image/png" href="img/typewriter-favicon.png" />
+    <title>{{ title }}</title>
     <link
       href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&display=swap"
       rel="stylesheet"
@@ -25,8 +37,8 @@ projects:
   </head>
   <body>
     <header>
-      <h1>Maureen L. Holland</h1>
-      <p>writer / web developer / wanderer</p>
+      <h1>{{ title }}</h1>
+      <p>{{ tagline }}</p>
     </header>
     <footer>
       <p>
