@@ -1,9 +1,20 @@
 ---
 permalink: styles.css
-banner: 'img/isle-of-skye.jpg'
+banner: 'img/isle-of-skye-cropped.jpg'
 ---
 
+
+/* apply a natural box layout model to all elements, but allowing components to change - thanks to Paul Irish */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
+  margin: 0;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
@@ -13,13 +24,22 @@ body {
     "footer";
 }
 
+header,
+footer {
+  text-align: center;
+  padding: 50px;
+  background-image: url({{ banner }});
+  background-size: cover;
+}
+
 header {
   grid-area: header;
-  background-image: url({{ banner }});
+  background-position: center;
 }
 
 footer {
   grid-area: footer;
+  background-position: center 75%;
 }
 
 main {
@@ -28,6 +48,7 @@ main {
 
 @media screen and (min-width: 980px) {
   body {
+    height: 100vh;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: 1fr 1fr;
     grid-template-areas:
@@ -41,5 +62,9 @@ main {
     grid-row: 2 / -1;
     position: relative;
     z-index: 1;
+    background-image: none;
+  }
+  main {
+    overflow-y: scroll;
   }
 }
