@@ -37,9 +37,6 @@ projects:
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
-    <div class="preloader">
-      <img src="spinner.svg" alt="spinner">
-    </div>
     <header>
       <h1>{{ title }}</h1>
       <p>{{ tagline }}</p>
@@ -106,7 +103,9 @@ projects:
     </main>
     <script>
       if (navigator.serviceWorker) {
-        navigator.serviceWorker.register('/serviceworker.js');
+        navigator.serviceWorker.register('/serviceworker.js')
+          .then((registration) => console.log(registration))
+          .catch(() => console.log('failure'));
       }
     </script>
   </body>
