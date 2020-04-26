@@ -25,7 +25,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addTransform("CleanCSS", function(content, outputPath) {
     if (outputPath.endsWith(".css")) {
-      let minified = new CleanCSS().minify(content);
+      let minified = new CleanCSS().minify(content).styles;
       return minified;
     }
 
