@@ -18,6 +18,7 @@ projects:
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="description" content="{{ tagline }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta property="og:type" content="site" />
     <meta property="og:title" content="{{ title }}" />
@@ -27,7 +28,7 @@ projects:
     <meta name="twitter:title" content="{{ title }}" />
     <meta name="twitter:description" content="{{ tagline }}" />
     <link rel="icon" type="image/png" href="img/typewriter-favicon.png" />
-    <link rel="serviceworker" href="/serviceworker.js" />
+    <!-- <link rel="serviceworker" href="/serviceworker.js" /> -->
     <title>{{ title }}</title>
     <link
       href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&display=swap"
@@ -103,9 +104,7 @@ projects:
     </main>
     <script>
       if (navigator.serviceWorker) {
-        navigator.serviceWorker.register('/serviceworker.js')
-          .then((registration) => console.log(registration))
-          .catch(() => console.log('failure'));
+        navigator.serviceWorker.register('/serviceworker.js');
       }
     </script>
   </body>
