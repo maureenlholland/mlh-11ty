@@ -8,8 +8,7 @@
     "lint": "eslint --ignore-path .gitignore .",
     "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|json|html)\"",
     "format": "npm run prettier -- --write",
-    "check-format": "npm run prettier -- --list-different",
-    "validate": "npm-run-all --parallel check-format lint test"
+    "validate": "npm-run-all --parallel format lint test"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +19,7 @@
     "@babel/preset-env": "^7.8.7",
     "axe-core": "^3.5.2",
     "babel-jest": "^25.1.0",
+    "clean-css": "^4.2.3",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
     "html-minifier": "^4.0.0",
