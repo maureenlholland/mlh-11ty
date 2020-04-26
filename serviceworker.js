@@ -1,10 +1,8 @@
-addEventListener('fetch', (e) => {
-    const request = e.request;
-    console.log(request);
-    e.respondWith(
-        fetch(request)
-            .then((resp) => {
-                return resp
-            })
-    );
+addEventListener("fetch", e => {
+  const request = e.request;
+  e.respondWith(
+    fetch(request).then(resp => {
+      return resp;
+    })
+  );
 });
