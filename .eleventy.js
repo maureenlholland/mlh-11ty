@@ -9,6 +9,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.setTemplateFormats("html, liquid");
   eleventyConfig.addPassthroughCopy("img");
   eleventyConfig.addPassthroughCopy("serviceworker.js");
+  eleventyConfig.addPassthroughCopy("offline.html");
 
   eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
     if (outputPath.endsWith(".html")) {
